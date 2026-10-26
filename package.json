@@ -1,0 +1,20 @@
+{
+  "name": "stride-plus-suite",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Shopify Plus extensibility suite demo: Functions (volume discount, drop-limit validation) + Checkout UI extension (size assist)",
+  "type": "module",
+  "scripts": {
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "lint": "eslint extensions/*/src extensions/*/tests"
+  },
+  "devDependencies": {
+    "eslint": "^9.14.0",
+    "vitest": "^2.1.9"
+  },
+  "dependencies": {
+    "@shopify/ui-extensions-react": "^2025.1.0",
+    "react": "^18.3.1"
+  }
+}

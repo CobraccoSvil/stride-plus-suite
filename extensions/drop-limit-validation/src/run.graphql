@@ -1,0 +1,19 @@
+query RunInput {
+  cart {
+    lines {
+      quantity
+      merchandise {
+        __typename
+        ... on ProductVariant {
+          product {
+            title
+            hasAnyTag(tags: ["limited-drop"])
+            metafield(namespace: "$app:drop-limit", key: "max_per_order") {
+              value
+            }
+          }
+        }
+      }
+    }
+  }
+}

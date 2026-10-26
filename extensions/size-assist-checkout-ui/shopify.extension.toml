@@ -1,0 +1,26 @@
+api_version = "2025-01"
+
+[[extensions]]
+name = "Size Assist"
+handle = "size-assist-checkout-ui"
+type = "ui_extension"
+
+[[extensions.targeting]]
+target = "purchase.checkout.block.render"
+module = "./src/Checkout.jsx"
+
+# Checkout UI extensions only receive metafields they declare.
+[[extensions.metafields]]
+namespace = "custom"
+key = "size_note"
+
+[extensions.capabilities]
+api_access = false
+network_access = false
+block_progress = false
+
+[extensions.settings]
+  [[extensions.settings.fields]]
+  key = "banner_enabled"
+  type = "boolean"
+  name = "Show size guidance banners"

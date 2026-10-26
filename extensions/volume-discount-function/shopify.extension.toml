@@ -1,0 +1,15 @@
+api_version = "2025-01"
+
+[[extensions]]
+name = "Volume discount — team pricing"
+handle = "volume-discount-function"
+type = "function"
+
+[[extensions.targeting]]
+target = "purchase.product-discount.run"
+input_query = "src/run.graphql"
+export = "run"
+
+[extensions.build]
+command = ""
+path = "dist/function.wasm"

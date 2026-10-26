@@ -1,0 +1,23 @@
+query RunInput {
+  cart {
+    lines {
+      quantity
+      merchandise {
+        __typename
+        ... on ProductVariant {
+          id
+          product {
+            # true when the product has the team-eligible tag
+            hasAnyTag(tags: ["team-eligible"])
+          }
+        }
+      }
+    }
+  }
+  shop {
+    # Merchant-editable tier config: [{ "minQuantity": 5, "percentage": 10 }, ...]
+    metafield(namespace: "$app:volume-discount", key: "tiers") {
+      value
+    }
+  }
+}
